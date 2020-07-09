@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="fragments/fragments :: menu"></div>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Film Adı</th>
+        <th scope="col">Film Yayın Yılı</th>
+        <th scope="col">Film Türü</th>
+        <th scope="col">Film Açıklaması</th>
+        <th scope="col">Film Medyası</th>
+        <th scope="col">Film Dili</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="film:${films}">
+        <td th:text="${film.name}"></td>
+        <td th:text="${film.year}"></td>
+        <td th:text="${film.genre}"></td>
+        <td th:text="${film.about}"></td>
+        <td th:text="${film.media}"></td>
+        <td th:text="${film.languages}"></td>
+        <td th:each="actor:${film.actors}">
+            <span th:text="${actor.name}+' '+${actor.surname}"></span></td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+</body>
+</html>
