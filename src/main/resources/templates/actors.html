@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Aktörler</title>
+</head>
+<body>
+<div th:insert="fragments/fragments :: menu"></div>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Oyuncu Adı</th>
+        <th scope="col">Oyuncu Cinsiyeti</th>
+        <th scope="col">Dogum Yılı</th>
+        <th scope="col">Filmleri</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="actor:${actors}">
+        <td th:text="${actor.name}+' '+${actor.surname}"></td>
+        <td th:text="${actor.gender}"></td>
+        <td th:text="${actor.birthyear}"></td>
+        <td th:text="${actor.films}">
+       </td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+</body>
+</html>

@@ -13,6 +13,8 @@ public class Actor {
     private String surname;
     private String gender;
     private int birthyear;
+    @Transient
+    List<String> films = new ArrayList<>();
 
 
 
@@ -65,6 +67,14 @@ public class Actor {
 
     public void setBirthyear(int birthyear) {
         this.birthyear = birthyear;
+    }
+
+    public List<String> getFilms() {
+        return films;
+    }
+
+    public void setFilms(List<String> films) {
+        this.films = films;
     }
 
     @Override
