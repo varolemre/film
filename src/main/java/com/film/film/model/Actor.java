@@ -14,15 +14,17 @@ public class Actor {
     private String gender;
     private int birthyear;
 
-    @ManyToOne
-    @JoinColumn(name = "film_id")
-    private Film film;
+
 
     public Actor(String name, String surname, String gender, int birthyear) {
         this.name = name;
         this.surname = surname;
         this.gender = gender;
         this.birthyear = birthyear;
+    }
+
+    public Actor(){
+
     }
 
     public long getId() {
@@ -65,11 +67,14 @@ public class Actor {
         this.birthyear = birthyear;
     }
 
-    public Film getFilm() {
-        return film;
-    }
-
-    public void setFilm(Film film) {
-        this.film = film;
+    @Override
+    public String toString() {
+        return "Actor{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", gender='" + gender + '\'' +
+                ", birthyear=" + birthyear +
+                '}';
     }
 }

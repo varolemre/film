@@ -18,7 +18,7 @@ public class Film {
     @ElementCollection
     private List<String> languages = new ArrayList<>();
 
-    @OneToMany(mappedBy = "film")
+    @ElementCollection
     private List<Actor> actors = new ArrayList<>();
 
     public Film(String name, String year, String genre, String about, String media, List<String> languages, List<Actor> actors) {
@@ -29,6 +29,9 @@ public class Film {
         this.media = media;
         this.languages = languages;
         this.actors = actors;
+    }
+    public Film(){
+
     }
 
     public long getId() {
@@ -93,5 +96,19 @@ public class Film {
 
     public void setActors(List<Actor> actors) {
         this.actors = actors;
+    }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", year='" + year + '\'' +
+                ", genre='" + genre + '\'' +
+                ", about='" + about + '\'' +
+                ", media='" + media + '\'' +
+                ", languages=" + languages +
+                ", actors=" + actors +
+                '}';
     }
 }
